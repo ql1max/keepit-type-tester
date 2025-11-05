@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keepit | Type Tester</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>Keepit | Type Tester</h1>
+            </div>
+            <div class="dark-mode-toggle">
+                <span class="toggle-label">Dark Mode</span>
+                <div class="toggle-switch" onclick="toggleDarkMode()">
+                    <div class="toggle-slider"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <h2>Letter Spacing Controls</h2>
+
+            <div class="control-sections">
+                <div class="control-section">
+                    <h3>Headings (Semi Bold / Medium)</h3>
+
+                    <div class="control-group">
+                        <label>H1 (64px)</label>
+                        <div class="slider-container">
+                            <input type="range" id="h1-spacing" min="-40" max="20" step="1" value="-20">
+                            <span class="value-display" id="h1-value">-0.020em / -2.0%</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>H2 (48px)</label>
+                        <div class="slider-container">
+                            <input type="range" id="h2-spacing" min="-40" max="20" step="1" value="-20">
+                            <span class="value-display" id="h2-value">-0.020em / -2.0%</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>H3 (38px)</label>
+                        <div class="slider-container">
+                            <input type="range" id="h3-spacing" min="-40" max="20" step="1" value="-20">
+                            <span class="value-display" id="h3-value">-0.020em / -2.0%</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>H4 (30px)</label>
+                        <div class="slider-container">
+                            <input type="range" id="h4-spacing" min="-40" max="20" step="1" value="-20">
+                            <span class="value-display" id="h4-value">-0.020em / -2.0%</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>H5 (24px)</label>
+                        <div class="slider-container">
+                            <input type="range" id="h5-spacing" min="-40" max="20" step="1" value="-15">
+                            <span class="value-display" id="h5-value">-0.015em / -1.5%</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>H6 (20px)</label>
+                        <div class="slider-container">
+                            <input type="range" id="h6-spacing" min="-40" max="20" step="1" value="-10">
+                            <span class="value-display" id="h6-value">-0.010em / -1.0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>Body Text (Regular)</h3>
+
+                    <div class="control-group">
+                        <label>Body (16px)</label>
+                        <div class="slider-container">
+                            <input type="range" id="body-spacing" min="-20" max="30" step="1" value="0">
+                            <span class="value-display" id="body-value">0.000em / 0.0%</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Small (14px)</label>
+                        <div class="slider-container">
+                            <input type="range" id="small-spacing" min="-20" max="30" step="1" value="10">
+                            <span class="value-display" id="small-value">0.010em / 1.0%</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Caption (12px)</label>
+                        <div class="slider-container">
+                            <input type="range" id="caption-spacing" min="-20" max="30" step="1" value="20">
+                            <span class="value-display" id="caption-value">0.020em / 2.0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn-primary" onclick="applyRecommended()">Try Recommended Values</button>
+                <button class="btn-secondary" onclick="resetToOriginal()">Reset to Current System</button>
+                <button class="btn-secondary" onclick="applyOptical()">Optical Scaling</button>
+            </div>
+        </div>
+
+        <div class="custom-text-section">
+            <h2>Custom Text Preview</h2>
+            <div class="text-input-group">
+                <label>Heading Text (Updates H1-H6)</label>
+                <input type="text" id="heading-text" placeholder="Try: WAVE Typography, Toward Excellence, or your brand name...">
+            </div>
+            <div class="text-input-group">
+                <label>Body Text (Updates Body, Small, Caption)</label>
+                <textarea id="body-text" placeholder="Try: The quick brown fox jumps over the lazy dog. Typography is the art and technique of arranging type to make written language legible, readable and appealing."></textarea>
+            </div>
+        </div>
+
+        <div class="comparison">
+            <div class="panel current">
+                <h2>Current System (-2%)</h2>
+
+                <div class="type-sample">
+                    <div class="type-label">H1</div>
+                    <div class="type-specs">64px / 600 / -2%</div>
+                    <div class="h1-sample heading-text">Typography Matters</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">H2</div>
+                    <div class="type-specs">48px / 600 / -2%</div>
+                    <div class="h2-sample heading-text">Typography Matters</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">H3</div>
+                    <div class="type-specs">38px / 600 / -2%</div>
+                    <div class="h3-sample heading-text">Typography Matters</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">H4</div>
+                    <div class="type-specs">30px / 600 / -2%</div>
+                    <div class="h4-sample heading-text">Typography Matters</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">H5</div>
+                    <div class="type-specs">24px / 500 / -1.5%</div>
+                    <div class="h5-sample heading-text">Typography Matters</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">H6</div>
+                    <div class="type-specs">20px / 500 / -1%</div>
+                    <div class="h6-sample heading-text">Typography Matters</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">Body</div>
+                    <div class="type-specs">16px / 400 / 0%</div>
+                    <div class="body-sample body-text">The quick brown fox jumps over the lazy dog. Typography is the art and technique of arranging type to make written language legible, readable and appealing.</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">Small</div>
+                    <div class="type-specs">14px / 400 / 1%</div>
+                    <div class="small-sample body-text">The quick brown fox jumps over the lazy dog. Typography is the art and technique of arranging type to make written language legible, readable and appealing.</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">Caption</div>
+                    <div class="type-specs">12px / 400 / 2%</div>
+                    <div class="caption-sample body-text">The quick brown fox jumps over the lazy dog. Typography is the art and technique of arranging type to make written language legible, readable and appealing.</div>
+                </div>
+            </div>
+
+            <div class="panel adjustable">
+                <h2>Adjusted System</h2>
+
+                <div class="type-sample">
+                    <div class="type-label">H1</div>
+                    <div class="type-specs">64px / 600 / <span id="h1-spec">-2%</span></div>
+                    <div class="h1-sample heading-text">Typography Matters</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">H2</div>
+                    <div class="type-specs">48px / 600 / <span id="h2-spec">-2%</span></div>
+                    <div class="h2-sample heading-text">Typography Matters</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">H3</div>
+                    <div class="type-specs">38px / 600 / <span id="h3-spec">-2%</span></div>
+                    <div class="h3-sample heading-text">Typography Matters</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">H4</div>
+                    <div class="type-specs">30px / 600 / <span id="h4-spec">-2%</span></div>
+                    <div class="h4-sample heading-text">Typography Matters</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">H5</div>
+                    <div class="type-specs">24px / 500 / <span id="h5-spec">-1.5%</span></div>
+                    <div class="h5-sample heading-text">Typography Matters</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">H6</div>
+                    <div class="type-specs">20px / 500 / <span id="h6-spec">-1%</span></div>
+                    <div class="h6-sample heading-text">Typography Matters</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">Body</div>
+                    <div class="type-specs">16px / 400 / <span id="body-spec">0%</span></div>
+                    <div class="body-sample body-text">The quick brown fox jumps over the lazy dog. Typography is the art and technique of arranging type to make written language legible, readable and appealing.</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">Small</div>
+                    <div class="type-specs">14px / 400 / <span id="small-spec">1%</span></div>
+                    <div class="small-sample body-text">The quick brown fox jumps over the lazy dog. Typography is the art and technique of arranging type to make written language legible, readable and appealing.</div>
+                </div>
+
+                <div class="type-sample">
+                    <div class="type-label">Caption</div>
+                    <div class="type-specs">12px / 400 / <span id="caption-spec">2%</span></div>
+                    <div class="caption-sample body-text">The quick brown fox jumps over the lazy dog. Typography is the art and technique of arranging type to make written language legible, readable and appealing.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-content">
+            <h2>Test with Challenging Letter Pairs</h2>
+            <div class="test-phrases">
+                <div class="phrase-test">
+                    <div class="adjustable h1-sample">WAVE Typography</div>
+                </div>
+                <div class="phrase-test">
+                    <div class="adjustable h2-sample">Toward Excellence</div>
+                </div>
+                <div class="phrase-test">
+                    <div class="adjustable h3-sample">Avowal Technology</div>
+                </div>
+                <div class="phrase-test">
+                    <div class="adjustable body-sample">The difference between effective and ineffective typography often comes down to fine-tuning details like letter spacing, especially with challenging pairs like "VA", "We", "Ty", and "ff".</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="export">
+            <h2>Export CSS Values</h2>
+            <pre class="code-block" id="css-output">/* Typography - Plus Jakarta Sans */</pre>
+            <button class="btn-primary copy-btn" onclick="copyCSSToClipboard()">Copy CSS to Clipboard</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
