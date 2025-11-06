@@ -331,13 +331,11 @@ button {
     color: white;
     margin-bottom: 1.5rem;
     line-height: 1.1;
-    font-size: 3.5rem;
 }
 
 .hero-description {
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 2.5rem;
-    font-size: 1.125rem;
     line-height: 1.7;
     max-width: 540px;
 }
@@ -654,14 +652,6 @@ button {
 
     .hero-container {
         padding: 3rem 1.5rem;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-description {
-        font-size: 1rem;
     }
 
     .hero-actions {
