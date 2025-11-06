@@ -106,16 +106,42 @@ git push -u origin main
 
 ## Typography Scale
 
-### Current System
-- **H1:** 64px / 600 weight / -2% letter spacing
-- **H2:** 48px / 600 weight / -2% letter spacing
-- **H3:** 38px / 600 weight / -2% letter spacing
-- **H4:** 30px / 600 weight / -2% letter spacing
-- **H5:** 24px / 500 weight / -1.5% letter spacing
-- **H6:** 20px / 500 weight / -1% letter spacing
-- **Body:** 16px / 400 weight / 0% letter spacing
-- **Small:** 14px / 400 weight / 1% letter spacing
-- **Caption:** 12px / 400 weight / 2% letter spacing
+### Current System (with 62.5% base)
+
+**Note:** Uses `html { font-size: 62.5%; }` so **1rem = 10px** for easier calculations.
+
+- **H1:** 6.4rem (64px) / 600 weight / -0.020em letter spacing
+- **H2:** 4.8rem (48px) / 600 weight / -0.020em letter spacing
+- **H3:** 3.8rem (38px) / 600 weight / -0.020em letter spacing
+- **H4:** 3.0rem (30px) / 600 weight / -0.020em letter spacing
+- **H5:** 2.4rem (24px) / 500 weight / -0.015em letter spacing
+- **H6:** 2.0rem (20px) / 500 weight / -0.010em letter spacing
+- **Body:** 1.6rem (16px) / 400 weight / 0.000em letter spacing
+- **Small:** 1.4rem (14px) / 400 weight / 0.010em letter spacing
+- **Caption:** 1.2rem (12px) / 400 weight / 0.020em letter spacing
+
+### Production Settings
+
+Matches Keepit.com production:
+- Font smoothing: `-webkit-font-smoothing: antialiased`
+- Background: `#fdfbfb` (warm off-white)
+- Text color: `#454545` (medium gray)
+- Selection color: `#CCF6E5` (mint green)
+
+### Letter Spacing Best Practices
+
+**For Plus Jakarta Sans:**
+- **Large headings (H1-H3):** Slightly negative spacing (-1% to -1.5%) works well with antialiasing
+- **Medium headings (H4-H6):** Minimal negative to neutral spacing (-0.5% to 0%)
+- **Body text:** Slight positive spacing (0.5-1%) improves readability for long-form content
+- **Small text:** Positive spacing (1-1.5%) essential for legibility
+- **Caption text:** Higher positive spacing (1.5-2%) compensates for small size
+
+**Why increase spacing for smaller sizes?**
+- Screen rendering benefits from more breathing room at small sizes
+- Antialiasing makes letters appear slightly bolder, requiring more space
+- Improves distinction between similar letterforms
+- Reduces eye strain for longer reading sessions
 
 ## Browser Support
 

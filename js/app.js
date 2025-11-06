@@ -54,66 +54,69 @@ function updateSpacing(level) {
 
 // Generate CSS output
 function updateCSSOutput() {
-    const css = `/* Typography - Plus Jakarta Sans */
+    const css = `/* Typography - Plus Jakarta Sans
+ * Base: html { font-size: 62.5%; } (1rem = 10px)
+ */
+
 h1 {
-  font-size: 4rem;
-  line-height: 4.75rem;
+  font-size: 6.4rem; /* 64px */
+  line-height: 7.6rem; /* 76px */
   font-weight: 600;
   letter-spacing: ${(parseInt(sliders.h1.value) / 1000).toFixed(3)}em;
 }
 
 h2 {
-  font-size: 3rem;
-  line-height: 3.75rem;
+  font-size: 4.8rem; /* 48px */
+  line-height: 6.0rem; /* 60px */
   font-weight: 600;
   letter-spacing: ${(parseInt(sliders.h2.value) / 1000).toFixed(3)}em;
 }
 
 h3 {
-  font-size: 2.375rem;
-  line-height: 3rem;
+  font-size: 3.8rem; /* 38px */
+  line-height: 4.8rem; /* 48px */
   font-weight: 600;
   letter-spacing: ${(parseInt(sliders.h3.value) / 1000).toFixed(3)}em;
 }
 
 h4 {
-  font-size: 1.875rem;
-  line-height: 2.375rem;
+  font-size: 3.0rem; /* 30px */
+  line-height: 3.8rem; /* 38px */
   font-weight: 600;
   letter-spacing: ${(parseInt(sliders.h4.value) / 1000).toFixed(3)}em;
 }
 
 h5 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 2.4rem; /* 24px */
+  line-height: 3.2rem; /* 32px */
   font-weight: 500;
   letter-spacing: ${(parseInt(sliders.h5.value) / 1000).toFixed(3)}em;
 }
 
 h6 {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 2.0rem; /* 20px */
+  line-height: 2.8rem; /* 28px */
   font-weight: 500;
   letter-spacing: ${(parseInt(sliders.h6.value) / 1000).toFixed(3)}em;
 }
 
 .body, p {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.6rem; /* 16px */
+  line-height: 2.4rem; /* 24px */
   font-weight: 400;
   letter-spacing: ${(parseInt(sliders.body.value) / 1000).toFixed(3)}em;
 }
 
 .small {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: 1.4rem; /* 14px */
+  line-height: 2.0rem; /* 20px */
   font-weight: 400;
   letter-spacing: ${(parseInt(sliders.small.value) / 1000).toFixed(3)}em;
 }
 
 .caption {
-  font-size: 0.75rem;
-  line-height: 1.125rem;
+  font-size: 1.2rem; /* 12px */
+  line-height: 1.8rem; /* 18px */
   font-weight: 400;
   letter-spacing: ${(parseInt(sliders.caption.value) / 1000).toFixed(3)}em;
 }`;
@@ -122,15 +125,17 @@ h6 {
 
 // Preset functions
 function applyRecommended() {
-    sliders.h1.value = -15;
-    sliders.h2.value = -12;
-    sliders.h3.value = -10;
-    sliders.h4.value = -8;
-    sliders.h5.value = -5;
-    sliders.h6.value = 0;
-    sliders.body.value = 0;
-    sliders.small.value = 8;
-    sliders.caption.value = 15;
+    // Recommended values for Plus Jakarta Sans with antialiasing
+    // Antialiasing makes text appear slightly bolder, so slightly looser spacing works better
+    sliders.h1.value = -15;  // -1.5%
+    sliders.h2.value = -12;  // -1.2%
+    sliders.h3.value = -10;  // -1.0%
+    sliders.h4.value = -8;   // -0.8%
+    sliders.h5.value = -5;   // -0.5%
+    sliders.h6.value = 0;    // 0%
+    sliders.body.value = 5;  // 0.5% - Better for long-form reading
+    sliders.small.value = 10; // 1% - Maintains current value (optimal)
+    sliders.caption.value = 15; // 1.5% - Slightly reduced from 2% for cleaner look
 
     Object.keys(sliders).forEach(level => updateSpacing(level));
 }
