@@ -324,49 +324,53 @@ button {
 
 .hero-item {
     position: relative;
-    display: inline-block;
-    width: 100%;
+    margin-bottom: 0;
 }
 
 .hero-title {
     color: white;
     margin-bottom: 1.5rem;
     line-height: 1.1;
+    position: relative;
+    display: inline-block;
 }
 
 .hero-description {
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 2.5rem;
     line-height: 1.7;
+    position: relative;
+    display: inline-block;
+    max-width: 600px;
 }
 
 .type-annotation {
     position: absolute;
-    right: -60px;
-    top: 50%;
-    transform: translateY(-50%);
+    right: -70px;
+    top: 0;
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--accent);
-    background: rgba(0, 192, 111, 0.1);
+    background: rgba(0, 192, 111, 0.15);
     border: 1px solid var(--accent);
-    padding: 0.25rem 0.5rem;
+    padding: 0.35rem 0.65rem;
     border-radius: 4px;
     font-family: monospace;
     letter-spacing: 0.05em;
+    white-space: nowrap;
 }
 
 .type-annotation::before {
     content: '';
     position: absolute;
-    left: -8px;
+    left: -9px;
     top: 50%;
     transform: translateY(-50%);
     width: 0;
     height: 0;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-    border-right: 8px solid var(--accent);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 9px solid var(--accent);
 }
 
 .hero-actions {
