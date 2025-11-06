@@ -317,8 +317,8 @@ button {
 .hero-content {
     color: white;
     max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+    margin: 0;
+    text-align: left;
     position: relative;
 }
 
@@ -377,7 +377,7 @@ button {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .hero-btn-primary,
