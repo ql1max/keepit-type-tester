@@ -319,6 +319,13 @@ button {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+}
+
+.hero-item {
+    position: relative;
+    display: inline-block;
+    width: 100%;
 }
 
 .hero-title {
@@ -331,6 +338,35 @@ button {
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 2.5rem;
     line-height: 1.7;
+}
+
+.type-annotation {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: rgba(0, 192, 111, 0.1);
+    border: 1px solid var(--accent);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-family: monospace;
+    letter-spacing: 0.05em;
+}
+
+.type-annotation::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-right: 8px solid var(--accent);
 }
 
 .hero-actions {
@@ -619,6 +655,10 @@ button {
 
     .hero-container {
         padding: 3rem 1.5rem;
+    }
+
+    .type-annotation {
+        display: none;
     }
 
     .hero-actions {

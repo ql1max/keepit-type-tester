@@ -42,7 +42,7 @@ function updateSpacing(level) {
     const percent = (value / 10).toFixed(1);
 
     values[level].textContent = `${em}em / ${percent}%`;
-    specs[level].textContent = `${percent}%`;
+    specs[level].textContent = `${em}em`;
 
     const samples = document.querySelectorAll(`.adjustable .${level}-sample`);
     samples.forEach(sample => {
