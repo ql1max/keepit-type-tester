@@ -314,17 +314,11 @@ button {
     overflow: hidden;
 }
 
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
 .hero-content {
     color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .hero-title {
@@ -337,13 +331,13 @@ button {
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 2.5rem;
     line-height: 1.7;
-    max-width: 540px;
 }
 
 .hero-actions {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .hero-btn-primary,
@@ -380,22 +374,6 @@ button {
     border-color: var(--accent);
     background: rgba(0, 192, 111, 0.1);
     transform: translateY(-2px);
-}
-
-.hero-visual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.placeholder-graphic {
-    width: 100%;
-    max-width: 400px;
-}
-
-.placeholder-graphic svg {
-    width: 100%;
-    height: auto;
 }
 
 .comparison {
@@ -628,17 +606,6 @@ button {
     }
 }
 
-@media (max-width: 1024px) {
-    .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .hero-visual {
-        order: -1;
-    }
-}
-
 @media (max-width: 768px) {
     body {
         padding: 1rem;
@@ -662,9 +629,5 @@ button {
     .hero-btn-primary,
     .hero-btn-secondary {
         width: 100%;
-    }
-
-    .placeholder-graphic {
-        max-width: 300px;
     }
 }
